@@ -306,7 +306,7 @@ const Index = () => {
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <Icon name="MapPin" className="text-primary flex-shrink-0 mt-1" size={20} />
-                    <span>Московская область, г. Верея, ул. Заводская, д. 1</span>
+                    <span>МО, Наро-фоминский район, д. Ястребово, ул. Березовая, д.55</span>
                   </div>
                   <Separator />
                   <div className="text-sm text-muted-foreground">

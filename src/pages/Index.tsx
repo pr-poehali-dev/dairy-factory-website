@@ -79,7 +79,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <img
-              src="https://cdn.poehali.dev/files/22aac561-ed56-4fef-a6eb-5ff9da8e1961.jpg"
+              src="https://cdn.poehali.dev/files/a9b6f0ad-7be3-4eab-9601-efbd350cba18.png"
               alt="Вкус и польза в каждой ложке"
               className="mx-auto mb-8 max-w-2xl w-full"
             />

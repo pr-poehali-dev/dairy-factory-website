@@ -148,9 +148,11 @@ const Index = () => {
               <p className="text-lg text-muted-foreground mb-6">
                 Наша миссия — сохранять традиции натурального молочного производства и заботиться о здоровье каждой семьи.
               </p>
-              <Button className="bg-primary hover:bg-primary/90">
-                <Icon name="FileText" className="mr-2" size={20} />
-                Скачать презентацию
+              <Button className="bg-primary hover:bg-primary/90" asChild>
+                <a href="/ВМЗ_НОВИНКИ.pdf" download>
+                  <Icon name="FileText" className="mr-2" size={20} />
+                  Скачать презентацию
+                </a>
               </Button>
             </div>
             <div className="grid grid-cols-2 gap-4 animate-scale-in">

@@ -26,7 +26,7 @@ const Index = () => {
 
   const products = [
     { name: 'Высокобелковое молоко', description: 'Натуральное пастеризованное', icon: 'Milk' },
-    { name: 'Высокобелковые безлактозные коктейли', description: 'Полезный кисломолочный продукт', icon: 'Droplet' },
+    { name: 'Высокобелковые безлактозные коктейли', description: 'с натуральными ягодными наполнителями', icon: 'Droplet' },
     { name: 'Творог', description: 'Свежий фермерский', icon: 'Cookie' },
     { name: 'Сметана', description: 'Густая и вкусная', icon: 'Sparkles' },
     { name: 'Йогурт', description: 'С натуральными добавками', icon: 'IceCream' },

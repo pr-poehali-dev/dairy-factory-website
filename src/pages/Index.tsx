@@ -68,9 +68,6 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <Button className="bg-primary hover:bg-primary/90">
-              Связаться
-            </Button>
           </nav>
         </div>
       </header>

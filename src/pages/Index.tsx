@@ -345,12 +345,12 @@ const Index = () => {
                   <span>Наличие ветеринарных документов</span>
                 </li>
               </ul>
-              <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
-                <a href="mailto:kermen@netfoods.ru">
-                  <Icon name="FileText" className="mr-2" size={20} />
-                  Отправить заявку
+              <div className="flex items-center space-x-2 text-lg">
+                <Icon name="Mail" size={20} className="text-primary" />
+                <a href="mailto:kermen@netfoods.ru" className="text-primary hover:underline">
+                  kermen@netfoods.ru
                 </a>
-              </Button>
+              </div>
             </CardContent>
           </Card>
         </div>

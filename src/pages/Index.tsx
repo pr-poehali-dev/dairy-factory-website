@@ -389,17 +389,6 @@ const Index = () => {
                 </li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Следите за нами</h4>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-background hover:bg-background/20">
-                  <Icon name="Phone" size={20} />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-background hover:bg-background/20">
-                  <Icon name="Mail" size={20} />
-                </Button>
-              </div>
-            </div>
           </div>
           <Separator className="bg-background/20 mb-8" />
           <div className="text-center text-sm opacity-70">

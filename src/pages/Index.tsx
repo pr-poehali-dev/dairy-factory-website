@@ -30,7 +30,7 @@ const Index = () => {
     { name: 'Творог', description: 'Свежий фермерский', icon: 'Cookie' },
     { name: 'Сметана', description: 'Густая и вкусная', icon: 'Sparkles' },
     { name: 'Йогурт', description: 'С натуральными добавками', icon: 'IceCream' },
-    { name: 'Сыр', description: 'Различные сорта', icon: 'Sandwich' },
+    { name: 'Творожные массы, крема', description: 'Различные сорта', icon: 'Sandwich' },
   ];
 
   return (

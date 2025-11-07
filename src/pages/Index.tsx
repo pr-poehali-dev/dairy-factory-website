@@ -161,7 +161,7 @@ const Index = () => {
               </Card>
               <Card className="bg-secondary text-secondary-foreground">
                 <CardContent className="p-6 text-center">
-                  <div className="text-4xl font-bold mb-2">2015</div>
+                  <div className="text-4xl font-bold mb-2">15+</div>
                   <div className="text-sm">видов продукции</div>
                 </CardContent>
               </Card>

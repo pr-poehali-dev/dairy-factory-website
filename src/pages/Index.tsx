@@ -87,7 +87,7 @@ const Index = () => {
               Натуральные молочные продукты с заботой о вашем здоровье
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Верейский молочный завод — более 50 лет качества и традиций производства молочной продукции
+              Верейский молочный завод - 10 лет качества, основанного на лучших традициях производства молочной продукции!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('products')}>

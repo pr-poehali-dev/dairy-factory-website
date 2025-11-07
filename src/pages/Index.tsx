@@ -291,7 +291,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Icon name="Mail" className="text-primary" size={20} />
-                    <span>eka@netfoods.ru</span>
+                    <a href="mailto:eka@netfoods.ru" className="hover:text-primary transition-colors">eka@netfoods.ru</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Icon name="Clock" className="text-primary" size={20} />

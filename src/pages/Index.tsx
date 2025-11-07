@@ -156,7 +156,7 @@ const Index = () => {
             <div className="grid grid-cols-2 gap-4 animate-scale-in">
               <Card className="bg-primary text-primary-foreground">
                 <CardContent className="p-6 text-center">
-                  <div className="text-4xl font-bold mb-2">50+</div>
+                  <div className="text-4xl font-bold mb-2">10+</div>
                   <div className="text-sm">лет на рынке</div>
                 </CardContent>
               </Card>

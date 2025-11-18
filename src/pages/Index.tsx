@@ -95,6 +95,10 @@ const Index = () => {
                 <Icon name="Info" className="mr-2" size={20} />
                 Узнать больше
               </Button>
+              <Button size="lg" variant="outline" onClick={() => window.location.href = '/presentation'}>
+                <Icon name="Presentation" className="mr-2" size={20} />
+                Презентация
+              </Button>
             </div>
           </div>
         </div>

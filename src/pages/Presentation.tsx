@@ -67,26 +67,25 @@ const Presentation = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Slide Content */}
-      <div className="flex-1 relative overflow-hidden">
+      <div className="flex-1 relative overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{ 
-            backgroundImage: `url(${currentSlideData.image})`,
-            filter: 'brightness(0.4)'
+            backgroundImage: `url(${currentSlideData.image})`
           }}
         />
         
         {/* Content Overlay */}
         <div className="relative z-10 h-full flex items-center justify-center p-8">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground animate-fade-in">
               {currentSlideData.title}
             </h1>
-            <h2 className="text-2xl md:text-4xl mb-8 opacity-90 animate-fade-in">
+            <h2 className="text-2xl md:text-4xl mb-8 text-foreground/80 animate-fade-in">
               {currentSlideData.subtitle}
             </h2>
-            <p className="text-lg md:text-2xl leading-relaxed whitespace-pre-line animate-fade-in">
+            <p className="text-lg md:text-2xl leading-relaxed whitespace-pre-line text-foreground/70 animate-fade-in">
               {currentSlideData.content}
             </p>
           </div>
@@ -95,14 +94,14 @@ const Presentation = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-4 rounded-full transition-all"
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary backdrop-blur-sm text-white p-4 rounded-full transition-all shadow-lg"
           aria-label="Previous slide"
         >
           <Icon name="ChevronLeft" size={32} />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-4 rounded-full transition-all"
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-primary/80 hover:bg-primary backdrop-blur-sm text-white p-4 rounded-full transition-all shadow-lg"
           aria-label="Next slide"
         >
           <Icon name="ChevronRight" size={32} />

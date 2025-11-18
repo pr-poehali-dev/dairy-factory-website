@@ -44,7 +44,7 @@ const Presentation = () => {
     {
       title: 'Свяжитесь с нами',
       subtitle: 'Мы всегда рады сотрудничеству',
-      content: 'Московская область, г. Верея, ул. Заводская, д. 1\n+7 (495) 123-45-67\ninfo@vereyamilk.ru',
+      content: 'МО, Наро-фоминский район, д. Ястребово, ул. Березовая, д.55\nПроезд от Москвы: 95 км по Минскому шоссе\nkermen@netfoods.ru',
       image: 'https://images.unsplash.com/photo-1516981879613-9f5da904015f?w=1200&q=80',
       theme: 'accent'
     }

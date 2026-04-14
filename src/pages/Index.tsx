@@ -3,10 +3,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 import { Separator } from '@/components/ui/separator';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import func2url from '../../backend/func2url.json';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
+  const [b2bForm, setB2bForm] = useState({ name: '', company: '', phone: '', email: '', products: '', comment: '' });
+  const [b2bStatus, setB2bStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +20,26 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleB2bSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setB2bStatus('loading');
+    try {
+      const res = await fetch(func2url['send-b2b'], {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(b2bForm),
+      });
+      if (res.ok) {
+        setB2bStatus('success');
+        setB2bForm({ name: '', company: '', phone: '', email: '', products: '', comment: '' });
+      } else {
+        setB2bStatus('error');
+      }
+    } catch {
+      setB2bStatus('error');
+    }
+  };
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -484,6 +509,60 @@ const Index = () => {
                   </a>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-8">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+                <Icon name="Send" className="text-primary" size={24} />
+                Оставить заявку
+              </h3>
+              <p className="text-muted-foreground mb-6">Заполните форму — свяжемся с вами в течение одного рабочего дня</p>
+
+              {b2bStatus === 'success' ? (
+                <div className="flex flex-col items-center py-10 text-center gap-3">
+                  <Icon name="CheckCircle2" className="text-primary" size={48} />
+                  <p className="text-xl font-semibold">Заявка отправлена!</p>
+                  <p className="text-muted-foreground">Екатерина свяжется с вами в ближайшее время.</p>
+                  <Button variant="outline" className="mt-2" onClick={() => setB2bStatus('idle')}>Отправить ещё</Button>
+                </div>
+              ) : (
+                <form onSubmit={handleB2bSubmit} className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Имя *</label>
+                    <Input placeholder="Иван Иванов" value={b2bForm.name} onChange={e => setB2bForm(f => ({ ...f, name: e.target.value }))} required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Компания</label>
+                    <Input placeholder="ООО Ромашка" value={b2bForm.company} onChange={e => setB2bForm(f => ({ ...f, company: e.target.value }))} />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Телефон *</label>
+                    <Input placeholder="+7 (___) ___-__-__" value={b2bForm.phone} onChange={e => setB2bForm(f => ({ ...f, phone: e.target.value }))} required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Email</label>
+                    <Input type="email" placeholder="mail@company.ru" value={b2bForm.email} onChange={e => setB2bForm(f => ({ ...f, email: e.target.value }))} />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm font-medium mb-1 block">Интересующая продукция</label>
+                    <Input placeholder="Например: творог, сливки 22%" value={b2bForm.products} onChange={e => setB2bForm(f => ({ ...f, products: e.target.value }))} />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm font-medium mb-1 block">Комментарий</label>
+                    <Textarea placeholder="Объём, условия, вопросы..." rows={3} value={b2bForm.comment} onChange={e => setB2bForm(f => ({ ...f, comment: e.target.value }))} />
+                  </div>
+                  {b2bStatus === 'error' && (
+                    <p className="md:col-span-2 text-sm text-destructive">Ошибка отправки. Попробуйте ещё раз или напишите на eka@netfoods.ru</p>
+                  )}
+                  <div className="md:col-span-2">
+                    <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={b2bStatus === 'loading'}>
+                      {b2bStatus === 'loading' ? <><Icon name="Loader2" className="mr-2 animate-spin" size={18} />Отправляем...</> : <><Icon name="Send" className="mr-2" size={18} />Отправить заявку</>}
+                    </Button>
+                  </div>
+                </form>
+              )}
             </CardContent>
           </Card>
         </div>

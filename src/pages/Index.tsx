@@ -161,6 +161,188 @@ const Index = () => {
         </div>
       </section>
 
+      <section id="b2b" className="py-20 px-4 bg-muted/50">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">B2B — Оптовые поставки</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Поставки высококачественной молочной продукции для промышленного использования. Гарантируем стабильные поставки, соответствие ГОСТ и индивидуальную фасовку под ваши задачи.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <Icon name="Package" className="text-primary" size={22} />
+                  Ассортимент для B2B
+                </h3>
+                <div className="space-y-3">
+                  {[
+                    ['Сливки для соуса', '22% ТУ'],
+                    ['Питьевые сливки', '10% ТУ'],
+                    ['Молоко', '2,5%, 3,5%, цельное, обезжиренное'],
+                    ['Творог из топлёного молока', 'Традиционная рецептура'],
+                    ['Высокобелковый творог', 'До 22 г белка / 100 г'],
+                    ['Безлактозный творог', 'Содержание лактозы < 0,01%'],
+                  ].map(([name, desc]) => (
+                    <div key={name} className="flex justify-between items-start gap-4 py-2 border-b last:border-0">
+                      <span className="font-medium">{name}</span>
+                      <span className="text-muted-foreground text-sm text-right">{desc}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                  <Icon name="Settings2" className="text-primary" size={22} />
+                  Условия сотрудничества
+                </h3>
+                <ul className="space-y-3">
+                  {[
+                    'Фасовка: bulk, порционная, транспортная тара',
+                    'СТМ: производство под вашей торговой маркой',
+                    'Документация: сертификаты, Меркурий, декларации',
+                    'Логистика: собственный транспорт или перевозчики',
+                    'Оплата: безналичный расчёт, отсрочка для постоянных партнёров',
+                    'Минимальный заказ: от 100 кг по позиции',
+                    'Срок поставки: 3–10 рабочих дней',
+                    'Отгрузка: д. Ястребово, Московская обл.',
+                    'Работаем с НДС',
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <Icon name="CheckCircle2" className="text-primary flex-shrink-0 mt-0.5" size={18} />
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          <Card className="mb-8">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <Icon name="Star" className="text-primary" size={22} />
+                Наши преимущества
+              </h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {[
+                  'Собственное производство в Московской области — короткие логистические цепочки',
+                  'Строгий контроль качества на всех этапах',
+                  'Соответствие ГОСТ и ТР ТС',
+                  'Гибкость: адаптируем рецептуры и фасовку под ваши требования',
+                  'Стабильность поставок — работаем без сезонных перебоев',
+                  'Возможность запуска новых позиций под запрос клиента',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2 bg-primary/5 rounded-lg p-3">
+                    <Icon name="CheckCircle2" className="text-primary flex-shrink-0 mt-0.5" size={16} />
+                    <span className="text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="bg-primary text-primary-foreground">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-4">Как оформить заказ?</h3>
+              <div className="grid sm:grid-cols-5 gap-4 mb-8">
+                {[
+                  'Свяжитесь с нами',
+                  'Согласуйте ассортимент и условия',
+                  'Получите счёт и договор',
+                  'Осуществите оплату',
+                  'Получите продукцию',
+                ].map((step, i) => (
+                  <div key={i} className="text-center">
+                    <div className="w-10 h-10 rounded-full bg-primary-foreground/20 flex items-center justify-center text-lg font-bold mx-auto mb-2">
+                      {i + 1}
+                    </div>
+                    <p className="text-sm opacity-90">{step}</p>
+                  </div>
+                ))}
+              </div>
+              <Separator className="bg-primary-foreground/20 mb-6" />
+              <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                <div className="flex-1">
+                  <p className="font-semibold mb-1">Малышева Екатерина</p>
+                  <p className="text-sm opacity-80">Руководитель направления по разработке и запуску новых продуктов</p>
+                  <p className="text-sm opacity-80">ООО «Верейский молочный завод»</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <a href="mailto:eka@netfoods.ru" className="flex items-center gap-2 bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors rounded-lg px-4 py-2 text-sm font-medium">
+                    <Icon name="Mail" size={18} />
+                    eka@netfoods.ru
+                  </a>
+                  <a href="tel:+79252234503" className="flex items-center gap-2 bg-primary-foreground/20 hover:bg-primary-foreground/30 transition-colors rounded-lg px-4 py-2 text-sm font-medium">
+                    <Icon name="Phone" size={18} />
+                    +7 (925) 223-45-03
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="mt-8">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-semibold mb-2 flex items-center gap-2">
+                <Icon name="Send" className="text-primary" size={24} />
+                Оставить заявку
+              </h3>
+              <p className="text-muted-foreground mb-6">Заполните форму — свяжемся с вами в течение одного рабочего дня</p>
+
+              {b2bStatus === 'success' ? (
+                <div className="flex flex-col items-center py-10 text-center gap-3">
+                  <Icon name="CheckCircle2" className="text-primary" size={48} />
+                  <p className="text-xl font-semibold">Заявка отправлена!</p>
+                  <p className="text-muted-foreground">Екатерина свяжется с вами в ближайшее время.</p>
+                  <Button variant="outline" className="mt-2" onClick={() => setB2bStatus('idle')}>Отправить ещё</Button>
+                </div>
+              ) : (
+                <form onSubmit={handleB2bSubmit} className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Имя *</label>
+                    <Input placeholder="Иван Иванов" value={b2bForm.name} onChange={e => setB2bForm(f => ({ ...f, name: e.target.value }))} required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Компания</label>
+                    <Input placeholder="ООО Ромашка" value={b2bForm.company} onChange={e => setB2bForm(f => ({ ...f, company: e.target.value }))} />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Телефон *</label>
+                    <Input placeholder="+7 (___) ___-__-__" value={b2bForm.phone} onChange={e => setB2bForm(f => ({ ...f, phone: e.target.value }))} required />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium mb-1 block">Email</label>
+                    <Input type="email" placeholder="mail@company.ru" value={b2bForm.email} onChange={e => setB2bForm(f => ({ ...f, email: e.target.value }))} />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm font-medium mb-1 block">Интересующая продукция</label>
+                    <Input placeholder="Например: творог, сливки 22%" value={b2bForm.products} onChange={e => setB2bForm(f => ({ ...f, products: e.target.value }))} />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label className="text-sm font-medium mb-1 block">Комментарий</label>
+                    <Textarea placeholder="Объём, условия, вопросы..." rows={3} value={b2bForm.comment} onChange={e => setB2bForm(f => ({ ...f, comment: e.target.value }))} />
+                  </div>
+                  {b2bStatus === 'error' && (
+                    <p className="md:col-span-2 text-sm text-destructive">Ошибка отправки. Попробуйте ещё раз или напишите на eka@netfoods.ru</p>
+                  )}
+                  <div className="md:col-span-2">
+                    <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={b2bStatus === 'loading'}>
+                      {b2bStatus === 'loading' ? <><Icon name="Loader2" className="mr-2 animate-spin" size={18} />Отправляем...</> : <><Icon name="Send" className="mr-2" size={18} />Отправить заявку</>}
+                    </Button>
+                  </div>
+                </form>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       <section id="about" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">

@@ -75,7 +75,7 @@ const Index = () => {
               />
             </div>
             <div className="hidden md:flex items-center space-x-6">
-              {['home', 'products', 'about', 'production', 'quality', 'contacts', 'purchases', 'b2b'].map((section) => (
+              {['home', 'products', 'b2b', 'about', 'production', 'quality', 'contacts', 'purchases'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
